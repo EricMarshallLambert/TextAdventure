@@ -14,6 +14,7 @@ public class Player {
     private Shovel shovel;
     private int power = 1;
     private int health = 10;
+    private String name = "";
 
     /**
      * Sprint 2 Module 1
@@ -22,7 +23,8 @@ public class Player {
      * @param newName - the player's name that will be saved
      */
     public void setName(String newName) {
-
+        name = newName;
+        System.out.println("Your name is now " + newName);
     }
 
     /**
@@ -32,7 +34,7 @@ public class Player {
      * @return The name of the player
      */
     public String getName() {
-        return "";
+        return name + "";
     }
 
     /**
@@ -42,7 +44,9 @@ public class Player {
      * @return true if the player's level is enough to open the door.
      */
     public boolean canOpenDoor() {
-        return false;
+        double canOpenCalculation = (double) level / 2;
+        System.out.println(canOpenCalculation);
+        return canOpenCalculation > 2 ;
     }
 
 
