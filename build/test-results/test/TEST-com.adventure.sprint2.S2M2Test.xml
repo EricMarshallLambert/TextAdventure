@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.adventure.sprint2.S2M2Test" tests="9" skipped="0" failures="0" errors="0" timestamp="2021-11-03T05:13:22" hostname="COLDSTORAGE" time="0.909">
+  <properties/>
+  <testcase name="testPlayerMovementInvalid()" classname="com.adventure.sprint2.S2M2Test" time="0.042"/>
+  <testcase name="testPlayerMovementEast()" classname="com.adventure.sprint2.S2M2Test" time="0.002"/>
+  <testcase name="testPlayerMovementWest()" classname="com.adventure.sprint2.S2M2Test" time="0.001"/>
+  <testcase name="testInvalidMoveInput()" classname="com.adventure.sprint2.S2M2Test" time="0.842"/>
+  <testcase name="testPrompt2()" classname="com.adventure.sprint2.S2M2Test" time="0.01"/>
+  <testcase name="checkMoveInputEast()" classname="com.adventure.sprint2.S2M2Test" time="0.002"/>
+  <testcase name="checkMoveInputWest()" classname="com.adventure.sprint2.S2M2Test" time="0.002"/>
+  <testcase name="checkSimpleInput()" classname="com.adventure.sprint2.S2M2Test" time="0.002"/>
+  <testcase name="testPrompt()" classname="com.adventure.sprint2.S2M2Test" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
