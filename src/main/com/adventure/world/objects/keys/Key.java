@@ -37,7 +37,7 @@ public class Key implements Tangible {
     }
 
     /**
-     * represents a key with leve and name you can set.
+     * represents a key with level and name you can set.
      * @param level a level to be assigned
      * @param name a name to be assigned
      */

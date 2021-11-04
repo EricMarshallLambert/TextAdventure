@@ -15,7 +15,7 @@ import main.com.adventure.world.objects.keys.Key;
 
 public class Door implements Tangible {
 
-    private boolean isOpen = false;
+    private boolean isOpen;
     private int level;
 
     /**
