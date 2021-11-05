@@ -31,7 +31,7 @@ public class GameInputProcessor {
      */
     private Command buildSimpleCommand(String input) {
 
-        String[] userInputArray = input.split(" ");
+        String[] userInputArray = input.trim().split(" ");
         String verb = userInputArray[0];
         return new Command(verb);
     }
@@ -53,26 +53,22 @@ public class GameInputProcessor {
      * @return - the Command object with the proper verb and object
      */
     private Command buildCommandWithObject(String input) {
-        String[] userInputArray = input.split(" ");
-        String object = null;
-        String verb = null;
+        String[] userInputArray = input.trim().split(" "); // with trim?
+        String object;
+        String verb;
 
         if (userInputArray.length <= 0) {
             verb = "";
             object = "";
-            return new Command(verb, object);
-
         } else if (userInputArray.length == 1) {
             verb = userInputArray[0];
             object = "";
-
-            return new Command(verb, object);
-
         } else {
             verb = userInputArray[0];
             object = userInputArray[1];
-            return new Command(verb, object);
         }
+
+        return new Command(verb, object);
     }
 
 

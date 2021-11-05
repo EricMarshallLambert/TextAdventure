@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.adventure.sprint1.S1M2Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-27T04:37:08" hostname="DESKTOP-1OIMMPI" time="0.039">
+  <properties/>
+  <testcase name="smokeTest()" classname="com.adventure.sprint1.S1M2Test" time="0.039"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
