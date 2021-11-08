@@ -55,7 +55,7 @@ public class GameInputProcessor {
      * @return - the Command object with the proper verb and object
      */
     private Command buildCommandWithObject(String input) {
-        String[] userInputArray = input.split(" "); // with trim?
+        String[] userInputArray = input.trim().split(" "); 
         String object;
         String verb;
 
@@ -67,7 +67,7 @@ public class GameInputProcessor {
             object = "";
         } else {
             verb = userInputArray[0];
-            object = input.substring(input.indexOf(" "));
+            object = input.substring(input.indexOf(" ") + 1);
         }
 
         return new Command(CommandVerb.getVerb(verb), object);

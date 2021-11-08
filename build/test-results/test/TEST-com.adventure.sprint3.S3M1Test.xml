@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.adventure.sprint3.S3M1Test" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-11-08T21:19:03" hostname="COLDSTORAGE" time="0.973">
+  <properties/>
+  <testcase name="testCommandHelp()" classname="com.adventure.sprint3.S3M1Test" time="0.965"/>
+  <testcase name="testCommandMove()" classname="com.adventure.sprint3.S3M1Test" time="0.003"/>
+  <testcase name="testCommandUse()" classname="com.adventure.sprint3.S3M1Test" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -27,6 +27,7 @@ public class World {
                 scenes.add(SceneFactory.buildCaveEscapeScene());
                 break;
             case S2M2_TestDirections:
+            case S3M1_TestDirections:
                 listener = new ConsoleEscapeTangibleListener();
                 for (int i = 0; i < 3; i++) {
                     try {

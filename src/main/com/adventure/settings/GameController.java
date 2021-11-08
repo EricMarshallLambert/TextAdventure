@@ -73,7 +73,7 @@ public class GameController {
     private void use(String itemName) {
         if (itemName.contains(" on ")) {
             String[] itemNames = itemName.split(" on ");
-            Tangible item = getTangibleObject(itemName); //potential fix here. was itemName
+            Tangible item = getTangibleObject(itemNames[0]);
             Tangible receiver = getCurrentScene().getItem(itemNames[1]);
             if (itemNames.length != 2) {
                 printInvalidCommand();
@@ -121,24 +121,6 @@ public class GameController {
     }
 
     private void applyCommand(Command command) {
-//        if (command.getVerb().equalsIgnoreCase(CommandConstants.LOOK)) {
-//            describeCurrentScene();
-//        } else if (command.getVerb().equalsIgnoreCase(CommandConstants.MOVE)) {
-//            move(command.getObjectName());
-//        } else if (command.getVerb().equalsIgnoreCase(CommandConstants.HELP)) {
-//            printHelp();
-//        } else if (command.getVerb().equalsIgnoreCase(CommandConstants.USE)) {
-//            use(command.getObjectName());
-//        } else if (command.getVerb().equalsIgnoreCase(CommandConstants.DIG)) {
-//            dig();
-//        } else if (command.getVerb().equalsIgnoreCase(CommandConstants.EXAMINE)) {
-//            examine(command.getObjectName());
-//        } else if (command.getVerb().equalsIgnoreCase(CommandConstants.TAKE)) {
-//            take(command.getObjectName());
-//        } else {
-//            printInvalidCommand();
-//        }
-
 
         switch (command.getVerb()) {
             case TAKE:
@@ -168,7 +150,7 @@ public class GameController {
                 break;
             default:
                 break;
-            }
+        }
     }
 
     private void startCombat() {

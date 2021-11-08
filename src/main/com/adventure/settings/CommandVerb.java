@@ -1,7 +1,5 @@
 package main.com.adventure.settings;
 
-import java.util.Locale;
-
 /**
  * Sprint 3 Module 1
  * This CommandVerb will be used instead of strings once we've learned about Enums.
