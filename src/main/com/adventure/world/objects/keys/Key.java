@@ -69,8 +69,8 @@ public class Key implements Tangible {
 
     @Override
     public Boolean canUse(Tangible item) {
-        return false;
-    }
+        return true;
+    }////was false
 
     @Override
     public void useItem(Tangible initiator) { /* intentionally left blank */ }
