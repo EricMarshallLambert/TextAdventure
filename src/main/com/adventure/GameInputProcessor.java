@@ -51,11 +51,11 @@ public class GameInputProcessor {
      * Example bad input:
      *  "move "
      *
-     * @param input - the input from the user
+     * @param input - the input from the user. userInput
      * @return - the Command object with the proper verb and object
      */
     private Command buildCommandWithObject(String input) {
-        String[] userInputArray = input.trim().split(" "); 
+        String[] userInputArray = input.trim().split(" ");
         String object;
         String verb;
 
