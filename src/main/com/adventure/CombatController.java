@@ -24,16 +24,27 @@ public class CombatController {
      */
     public void autosimulateCombat() {
 
+        while (monster.getHealth() > 0 && player.getHealth() > 0) {
+            //hit monster
+            monster.setHealth(monster.getHealth() - player.getPower());
+            //monster hits player
+            player.setHealth(player.getHealth() - monster.getPower());
+        }
     }
 
+    /**
+     * find out if the player is dead.
+     * @return true if player's health is 0
+     */
     public boolean isPlayerDefeated() {
-        return false;
+        return player.getHealth() <= 0;
     }
 
     /**
      * Resets the health of the monster and player back to 10.
      */
     public void reset() {
-
+        player.setHealth(10);
+        monster.setHealth(10);
     }
 }
