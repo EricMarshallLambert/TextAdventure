@@ -10,8 +10,7 @@ public class Player {
 
     public int level = 5;
     private int currentLocationIndex = AppSettings.getStartingLocation();
-    private Key key;
-    private Shovel shovel;
+    private Backpack backpack = new Backpack();
     private int power = 1;
     private int health = 10;
     private String name = "";
@@ -104,7 +103,7 @@ public class Player {
      */
     public Tangible getItem(String itemName) {
         //TODO Complete this function in Sprint 3 Module 3
-        return null;
+        return backpack.getItem(itemName);
     }
 
     /**
@@ -115,7 +114,7 @@ public class Player {
      */
     public boolean removeItem(Tangible item) {
         //TODO Complete this function in Sprint 3 Module 3
-        return false;
+        return this.backpack.removeItem(item);
     }
 
     /**
@@ -124,6 +123,7 @@ public class Player {
      */
     public void printItems() {
         //TODO Complete this function in Sprint 3 Module 3
+        backpack.printItems();
     }
 
     /**
@@ -133,22 +133,36 @@ public class Player {
      */
     public void addItem(Tangible item) {
         //TODO Complete this function
+        backpack.addItem(item);
     }
 
+    /**
+     *
+     * @param item key to add to the backpack.
+     */
     public void setKey(Key item) {
-        key = item;
+
+        backpack.addItem(item);
     }
 
+    /**
+     *
+     * @return retrieve key from backpack.
+     */
     public Key getKey() {
-        return key;
+        return (Key) backpack.getItem("key");
     }
 
+    /**
+     *
+     * @param item add shovel to backpack.
+     */
     public void setShovel(Shovel item) {
-        shovel = item;
+        backpack.addItem(item);
     }
 
     public Shovel getShovel() {
-        return shovel;
+        return (Shovel) backpack.getItem("Shovel");
     }
 
     //////// DON'T CHANGE THE CODE BELOW. ///////////

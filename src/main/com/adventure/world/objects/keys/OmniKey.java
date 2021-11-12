@@ -9,7 +9,6 @@ public class OmniKey implements Tangible {
 
     private static final int pinLength = 5;
     public boolean[] pins = new boolean[pinLength];
-
     /**
      * A key that can be used with the OmniDoor.
      */
@@ -28,7 +27,16 @@ public class OmniKey implements Tangible {
     public void useItem(Tangible door) {
         if (door instanceof OmniDoor) {
             //TODO Complete the function
-            System.out.println("Not yet implemented");
+            int pinIndex = 0;
+
+            while (pinIndex > -1) {
+                pinIndex = ((OmniDoor) door).getFirstWrongPin(this);
+                if (pinIndex > -1) {
+                    pins[pinIndex] = !pins[pinIndex];
+                }
+            }
+        } else {
+            System.out.println("This key can only be used with OmniDoors");
         }
     }
 

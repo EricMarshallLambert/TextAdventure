@@ -27,6 +27,10 @@ public class CombatController {
         while (monster.getHealth() > 0 && player.getHealth() > 0) {
             //hit monster
             monster.setHealth(monster.getHealth() - player.getPower());
+            //check if monster is dead
+            if (monster.getHealth() <= 0) {
+                break;
+            }
             //monster hits player
             player.setHealth(player.getHealth() - monster.getPower());
         }

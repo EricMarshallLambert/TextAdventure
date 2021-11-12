@@ -145,8 +145,10 @@ public class GameController {
                 printHelp();
                 break;
             case FIGHT:
+                startCombat();
                 break;
             case INVENTORY:
+                player.printItems();
                 break;
             default:
                 break;

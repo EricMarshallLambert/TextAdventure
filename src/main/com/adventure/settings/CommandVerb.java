@@ -29,7 +29,7 @@ public enum CommandVerb {
     public static CommandVerb getVerb(String verbString) {
         CommandVerb c;
 
-        switch (verbString.toUpperCase()) {
+        switch (verbString.toUpperCase())  {
             case "TAKE":
                 c = TAKE;
                 break;
