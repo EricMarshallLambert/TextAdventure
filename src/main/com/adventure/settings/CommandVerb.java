@@ -1,5 +1,8 @@
 package main.com.adventure.settings;
 
+import main.com.adventure.exceptions.EmptyCommandException;
+import main.com.adventure.exceptions.InvalidCommandException;
+
 /**
  * Sprint 3 Module 1
  * This CommandVerb will be used instead of strings once we've learned about Enums.
@@ -12,24 +15,31 @@ public enum CommandVerb {
     DIG,
     EXAMINE,
     LOOK,
-    INVALID,
     HELP,
+    QUIT,
     //Used in Sprint 3 Module 2
     FIGHT,
     //Used in Sprint 3 Module 3
     INVENTORY;
 
 
-
     /**
      * Takes a users input and determines which verb to include in the command.
+     *
      * @param verbString - the users input.
      * @return - the CommandVerb associated with the given input.
      */
-    public static CommandVerb getVerb(String verbString) {
+    public static CommandVerb getVerb(String verbString)
+            throws
+            EmptyCommandException,
+            InvalidCommandException {
+
         CommandVerb c;
 
-        switch (verbString.toUpperCase())  {
+        if (verbString == null || verbString.equals("")) {
+            throw new EmptyCommandException();
+        }
+        switch (verbString.toUpperCase()) {
             case "TAKE":
                 c = TAKE;
                 break;
@@ -57,9 +67,11 @@ public enum CommandVerb {
             case "INVENTORY":
                 c = INVENTORY;
                 break;
-            default:
-                c = INVALID;
+            case "QUIT":
+                c = QUIT;
                 break;
+            default:
+                throw new InvalidCommandException();
         }
         return c;
     }

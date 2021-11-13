@@ -150,7 +150,11 @@ public class GameController {
             case INVENTORY:
                 player.printItems();
                 break;
+            case QUIT:
+                System.exit(0);
+                break;
             default:
+                System.out.println("FULL STOP");
                 break;
         }
     }

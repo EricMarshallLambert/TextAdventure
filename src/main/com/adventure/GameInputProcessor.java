@@ -1,5 +1,7 @@
 package main.com.adventure;
 
+import main.com.adventure.exceptions.EmptyCommandException;
+import main.com.adventure.exceptions.InvalidCommandException;
 import main.com.adventure.settings.Command;
 import main.com.adventure.settings.CommandConstants;
 import main.com.adventure.settings.CommandVerb;
@@ -31,10 +33,20 @@ public class GameInputProcessor {
      * @return - the Command object with the proper verb and blank object
      */
     private Command buildSimpleCommand(String input) {
+        CommandVerb v = null;
+        try {
+            String[] userInputArray = input.split(" ");
+            String verb = userInputArray[0];
+            v = CommandVerb.getVerb(verb);
 
-        String[] userInputArray = input.split(" ");
-        String verb = userInputArray[0];
-        CommandVerb v = CommandVerb.getVerb(verb);
+        } catch (EmptyCommandException e) {
+            System.out.println(e.getMessage());
+            return buildSimpleCommand(prompt());
+
+        } catch (InvalidCommandException e) {
+            System.out.println(e.getMessage());
+            return buildSimpleCommand(prompt());
+        }
         return new Command(v);
     }
 
@@ -58,6 +70,7 @@ public class GameInputProcessor {
         String[] userInputArray = input.trim().split(" ");
         String object;
         String verb;
+        Command commandVerb = null;
 
         if (userInputArray.length <= 0) {
             verb = "";
@@ -69,8 +82,16 @@ public class GameInputProcessor {
             verb = userInputArray[0];
             object = input.substring(input.indexOf(" ") + 1);
         }
-
-        return new Command(CommandVerb.getVerb(verb), object);
+        try {
+            commandVerb = new Command(CommandVerb.getVerb(verb), object);
+        } catch (EmptyCommandException e) {
+            System.out.println(e.getMessage());
+            return buildSimpleCommand(prompt());
+        } catch (InvalidCommandException e) {
+            System.out.println(e.getMessage());
+            return buildSimpleCommand(prompt());
+        }
+        return commandVerb;
     }
 
 
